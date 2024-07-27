@@ -42,44 +42,44 @@ $(document).ready(function(){
         }
     });
 });
-$(document).ready(function(){
+$(document).ready(function() {
     const type = document.querySelector('.type-text');
+    const cursor = document.querySelector('.cursor');
 
-    let listTexts = ["Front end developer","Creative-active, and mastery","Technician","8 month Expriance"];
+    let listTexts = ["Front end developer", "Creative-active, and mastery", "Technician", "8 months Experience"];
     
     let index = -1;
     let current = 0;
-    
+
     function typeTextFunc() {
         if (current === listTexts.length) {
             current = 0;
         }
         let typeText = setInterval(() => {
-            if (index == listTexts[current].length - 1) {
+            if (index === listTexts[current].length - 1) {
                 clearInterval(typeText);
-                clearTextFunc();
+                setTimeout(clearTextFunc, 1000); // Add a delay before clearing the text
             } else {
                 index++;
                 type.textContent += listTexts[current][index];
             }
         }, 150);
-    };
-    
+    }
+
     function clearTextFunc() {
         let clearText = setInterval(() => {
-            if (type.textContent.length == 0) {
+            if (type.textContent.length === 0) {
                 clearInterval(clearText);
                 index = -1;
-                current++
-                typeTextFunc();
+                current++;
+                setTimeout(typeTextFunc, 500); // Add a delay before typing the next text
             } else {
-                type.textContent = type.textContent.slice(0, -1)
+                type.textContent = type.textContent.slice(0, -1);
             }
-        }, 150);
-    };
-    
-    typeTextFunc();
+        }, 100); // Speed up the clearing effect for better visual appeal
+    }
 
+    typeTextFunc();
 });
 
 // Skill cahrt 
