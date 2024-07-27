@@ -463,48 +463,22 @@ h2.about-head{
   color: crimson;
   position: relative;
 }
-.type-text::after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: -5px;
-  top: 0;
-  height: 100%;
-  width: 3px;
-  background-color:crimson ;
-  animation: type .5s infinite;
+.cursor {
+  display: inline-block;
+  color: crimson;
+  width: 1ch;
+  animation: blink 0.7s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
 }
 .about-text p {
   font-size: 22px;
   color: gray;
   padding-block: 15px;
   line-height: 37px;
-}
-@-webkit-keyframes type {
-  0% {
-      opacity: 1;
-  }
-
-  50% {
-      opacity: .5;
-  }
-
-  100% {
-      opacity: 0;
-  }
-}
-@keyframes type {
-  0% {
-      opacity: 1;
-  }
-
-  50% {
-      opacity: .5;
-  }
-
-  100% {
-      opacity: 0;
-  }
 }
 a.btn{
   border: 1px solid crimson;
