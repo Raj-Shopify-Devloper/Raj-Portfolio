@@ -5,7 +5,7 @@ import Skill from './my-project/skill'
 import Projects from './my-project/project'
 import Contect from './my-project/contect'
 import Footer from './my-project/footer'
-const App: React.FC = () => {
+function App() {
   return (
     <>
       <Index />
