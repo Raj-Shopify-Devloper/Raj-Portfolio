@@ -1,7 +1,7 @@
 import React from 'react'
 import Index from './my-project';
 import About from './my-project/about';
-
+import Skill from './my-project/skill';
 
 const App: React.FC = () => {
 
@@ -9,6 +9,7 @@ const App: React.FC = () => {
     <>
       <Index />
       <About />
+      <Skill />
     </>
   )
 }
