@@ -241,25 +241,25 @@
                             </div>
                         </div>
                         <div class="column right">
-                            <div class="contact-text">Message me</div>
-                            <form action="https://api.web3forms.com/submit" method="POST" encType="text/plain">
-                               <input type="hidden" name="access_key" value="b67a57e3-dee5-4723-a605-a82f13f16285">
-                                <div class="contact-fields">
-                                    <div class="contact-field name">
-                                        <input type="text" placeholder="Name" required />
-                                    </div>
-                                    <div class="contact-field email">
-                                        <input type="email" placeholder="Email" required />
-                                    </div>
+                          <div class="contact-text">Message me</div>
+                           <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="b67a57e3-dee5-4723-a605-a82f13f16285">
+                            <div class="contact-fields">
+                                <div class="contact-field name">
+                                    <input type="text" name="name" placeholder="Name" required />
                                 </div>
-                                <div class="contact-field">
-                                    <input type="text" placeholder="Subject" required />
+                                <div class="contact-field email">
+                                    <input type="email" name="email" placeholder="Email" required />
                                 </div>
-                                <div class="field textarea">
-                                    <textarea placeholder="Message.." required></textarea>
-                                </div>
-                                  <button type="submit" class="contact-button btn">Send message</button>
-                            </form>
+                            </div>
+                            <div class="contact-field">
+                                <input type="text" name="subject" placeholder="Subject" required />
+                            </div>
+                            <div class="field textarea">
+                                <textarea name="message" placeholder="Message.." required></textarea>
+                            </div>
+                            <button type="submit" class="contact-button btn">Send message</button>
+                          </form>
                         </div>
                     </div>
                 </div>
