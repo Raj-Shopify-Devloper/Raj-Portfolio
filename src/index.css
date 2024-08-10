@@ -851,6 +851,9 @@ a.contact-sub-title:hover {
   color: teal;
   transition: 0.8s;
 }
+.contact-text {
+  font-size: var(--font-size-medium);
+}
 .contact-fields {
   display: flex;
   gap: 32px;
