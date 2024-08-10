@@ -924,9 +924,9 @@ a.contact-sub-title:hover {
   padding: var(--padding-medium) 50px;
   font-size: var(--padding-medium);
 }
-.contact-button.btn > button {
-  border: none;
-  padding: 0;
+button.contact-button {
+  padding: 15px 50px;
+  font-size: var(--font-size-small);
   margin-top: 15px;
 }
 /* Footer Section start  */
