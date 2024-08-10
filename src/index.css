@@ -481,7 +481,7 @@ h2.about-head {
   padding-block: 15px;
   line-height: 37px;
 }
-a.btn {
+.btn {
   border: 1px solid var(--crimson);
   color: var(--white);
   background: linear-gradient(to right, var(--crimson) 50%, var(--white) 50%);
@@ -497,7 +497,7 @@ a.about-cv {
   padding: 15px 0 15px 74px;
   font-size: 25px;
 }
-a.btn:hover {
+.btn:hover {
   background-position: right bottom;
   color: var(--crimson);
 }
@@ -920,7 +920,7 @@ a.contact-sub-title:hover {
   height: var(--padding-large);
   width: var(--padding-large);
 }
-.contact-button.btn > button > a.btn {
+.contact-button.btn > button > .btn {
   padding: var(--padding-medium) 50px;
   font-size: var(--padding-medium);
 }
