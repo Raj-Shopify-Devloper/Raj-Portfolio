@@ -11,7 +11,7 @@ $(document).ready(function () {
       const targetProgress = parseInt(element.dataset.progress, 10);
 
       if (count <= targetProgress) {
-        element.parentElement.style.background = `conic-gradient(#53363b ${count}%, #d2bf9e 0)`;
+        element.parentElement.style.background = `conic-gradient(var(--sky) ${count}%,var(--perpal)  0)`;
         element.firstElementChild.textContent = `${count}%`;
 
         setTimeout(() => {

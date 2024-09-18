@@ -1,10 +1,10 @@
 :root {
   --white: #fff;
-  --crimson: #53363b;
   --black: black;
-  --logo-color: #00000073;
-  --sky: #d2bf9e;
-  --perpal: #304d46;
+  --logo-color: #39312db3;
+  --perpal: #d2dad5;
+  --crimson: #5d031d;
+  --sky: #124e66;
   --p-color: gray;
   --bg-color: #d2bf9e;
   --primary-font: "Ubuntu", sans-serif;
@@ -16,6 +16,7 @@
   --padding-small: 10px;
   --padding-medium: 20px;
   --padding-large: 30px;
+  --time: 0.5s;
 }
 *,
 *:before,
@@ -81,12 +82,12 @@ ul.item-list li a {
   display: flex;
   max-width: 100%;
   width: max-content;
-  transition: 0.8s;
+  transition: var(--time);
 }
 
 ul.item-list li a:hover {
   color: var(--crimson);
-  transition: 0.8s;
+  transition: var(--time);
 }
 
 .menu-button-wrapper {
@@ -135,88 +136,6 @@ ul.item-list li {
   background: var(--black);
   border-radius: var(--font-size-medium);
 }
-
-/* .menu-button:checked ~ .item-list {
-  transform: translateX(-20%) scale(1);
-  border-radius: var(--padding-medium);
-  opacity: 1;
-  right: 15%;
-  user-select: auto;
-  margin: 0;
-  max-width: 100vh;
-  width: max-content;
-  z-index: -1;
-} */
-
-/* .menu-button:checked ~ .icon-wrapper .hamburger-line.second {
-  transform: rotate(-45deg);
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger-line.first {
-  transform: translate(2px, 8px) rotate(-135deg);
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger-line.third {
-  transform: translate(11px, -3px) rotate(-135deg);
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger:before {
-  transform: rotate(45deg);
-  .hamburger {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  padding: var(--padding-medium);
-}
-
-.hamburger:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: var(--padding-medium);
-  background: transparent;
-  transition: all 0.4s cubic-bezier(0.54, -0.1, 0.57, 0.57);
-}
-
-.hamburger-input {
-  position: absolute;
-  opacity: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  cursor: pointer;
-}
-
-.hamburger-line {
-  width: 100%;
-  background: var(--white);
-  height: 2px;
-  display: block;
-  border-radius: 6px;
-  transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
-  position: relative;
-}
-
-.hamburger-line.first,
-.hamburger-line.third {
-  width: 50%;
-}
-
-.hamburger-line.third {
-  margin-left: 50%;
-  transform-origin: left;
-}
-
-} */
-
 /* Banner section start */
 section.header-section {
   background: linear-gradient(
@@ -244,10 +163,10 @@ section.header-section {
   animation-delay: 0s;
 }
 .banner-air-background .air.air2 {
-  animation: wave2 15s linear infinite;
+  animation: wave2 1var () linear infinite;
   z-index: 9;
   opacity: 0.5;
-  animation-delay: -5s;
+  animation-delay: -var();
 }
 .banner-air-background .air.air3 {
   animation: wave 30s linear infinite;
@@ -256,10 +175,10 @@ section.header-section {
   animation-delay: -2s;
 }
 .banner-air-background .air.air4 {
-  animation: wave2 5s linear infinite;
+  animation: wave2 var() linear infinite;
   z-index: 7;
   opacity: 0.7;
-  animation-delay: -5s;
+  animation-delay: -var();
 }
 @keyframes wave {
   0% {
@@ -376,7 +295,7 @@ section.header-section {
   justify-content: center;
   border-radius: 50%;
   border: 1px solid var(--black);
-  transition: all 0.5s ease;
+  transition: all var(--time) ease;
 }
 .banner-icon .main-icon.linkd {
   animation: iconmove 7s infinite;
@@ -476,7 +395,7 @@ h2.about-head {
   border: 1px solid var(--crimson);
   color: var(--white);
   background: linear-gradient(to right, var(--crimson) 50%, var(--white) 50%);
-  transition: all 0.5s ease-in-out;
+  transition: all var(--time) ease-in-out;
   cursor: pointer;
   background-size: 206% 100%;
   text-decoration: none;
@@ -518,11 +437,10 @@ h2.services-head {
   font-family: Ubuntu, sans-serif;
 }
 .services-contain {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   position: relative;
   cursor: pointer;
-  padding: 40px 0px;
+  padding: 60px 0 0;
   gap: 30px;
 }
 .services-contain .services-box .services-content {
@@ -531,30 +449,39 @@ h2.services-head {
   box-shadow: inset var(--black) 0px 5px 15px;
   z-index: 1;
   width: 100%;
-  height: auto;
+  height: 100%;
   color: var(--white);
-  padding: var(--padding-medium) 60px 0 76px;
+  padding: 70px 60px 40px 60px;
   border-radius: 8px;
-  transition: all 0.5s ease 0s;
-  height: 309px;
+  transition: all var(--time) ease 0s;
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 .services-contain .services-box .services-content p {
   color: var(--white);
+}
+.services-contain .services-box span {
+  position: absolute;
+  width: 30%;
+  top: -25%;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: auto;
 }
 .services-contain .services-box::before,
 .services-contain .services-box::after {
   content: "";
   position: absolute;
   top: 0px;
-  width: 95%;
+  width: 100%;
   height: 100%;
   transform: skewX(15deg);
   border-radius: 8px;
-  transition: all 0.8s ease 0s;
+  transition: all var(--time) ease 0s;
   left: 0;
 }
 .services-contain .services-box:hover::before,
@@ -562,44 +489,26 @@ h2.services-head {
   transform: skewX(-0deg);
   width: calc(21.1% - 90px);
   left: 0;
+  opacity: 1;
 }
 .services-contain .services-box:nth-child(1)::before,
 .services-contain .services-box:nth-child(1)::after {
-  background: var(--perpal);
+  background: var(--sky);
+  opacity: 0.2;
 }
 .services-contain .services-box:nth-child(2)::before,
 .services-contain .services-box:nth-child(2)::after {
-  background: var(--sky);
+  background: var(--perpal);
+  opacity: 0.2;
 }
 .services-contain .services-box:nth-child(3)::before,
 .services-contain .services-box:nth-child(3)::after {
   background: var(--crimson);
-}
-.services-contain .services-box span {
-  display: block;
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 100px;
-  bottom: 0px;
-  z-index: 50;
-  pointer-events: none;
-  background: url(https://cdn.icon-icons.com/icons2/2334/PNG/512/pen_tool_anchor_point_design_icon_142354.png);
-  background-position: top;
-  background-size: contain;
-  background-repeat: no-repeat;
+  opacity: 0.2;
 }
 .services-box {
   position: relative;
-}
-span#services-first img {
-  width: 4%;
-  background: transparent;
-  position: absolute;
-  left: 21%;
-  top: var(--padding-small);
-  visibility: hidden;
+  height: inherit;
 }
 .services-contain span#services-first img:hover {
   visibility: visible;
@@ -765,11 +674,11 @@ h2.contact-head.title {
   font-size: var(--padding-medium);
   text-decoration: none;
   color: var(--black);
-  transition: 0.8s;
+  transition: var(--time);
 }
 a.contact-sub-title:hover {
   color: var(--logo-color);
-  transition: 0.8s;
+  transition: var(--time);
 }
 .contact-text {
   font-size: var(--font-size-medium);
@@ -798,7 +707,7 @@ a.contact-sub-title:hover {
   border-radius: 6px;
   outline: none;
   padding: 12px 15px;
-  transition: all 0.3s ease 0s;
+  transition: all var(--time) ease 0s;
 }
 .contact-field {
   margin-bottom: 15px;
@@ -815,7 +724,7 @@ a.contact-sub-title:hover {
   border-radius: 6px;
   outline: none;
   padding: 12px 15px;
-  transition: all 0.3s ease 0s;
+  transition: all var(--time) ease 0s;
 }
 .contact-row > svg {
   fill: var(--logo-color);
@@ -874,16 +783,16 @@ p.footer-text > a {
   justify-content: center;
 }
 .footer-icon .main-icon.fb {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.fb:hover {
   fill: var(--white);
   border: 1px solid transparent;
   background-color: #3b5998;
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.insta {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.insta:hover {
   border: 1px solid transparent;
@@ -895,11 +804,11 @@ p.footer-text > a {
     #cc2366 75%,
     #bc1888 100%
   );
-  transition: 0.5s;
+  transition: var(--time);
   fill: var(--white);
 }
 .footer-icon .main-icon.linkd {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon svg {
   display: flex;
@@ -910,43 +819,43 @@ p.footer-text > a {
   background-color: #0072b1;
   border: 1px solid transparent;
   fill: var(--white);
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.gitup {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.gitup:hover {
   fill: var(--white);
   border: 1px solid transparent;
   background-color: var(--black);
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.twit {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.twit:hover {
   fill: var(--white);
   background-color: #26a7de;
-  transition: 0.5s;
+  transition: var(--time);
   border: 1px solid transparent;
 }
 .footer-icon .main-icon.wp {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.wp:hover {
   fill: var(--white);
   background-color: #25d366;
   border: 1px solid transparent;
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.mail {
-  transition: 0.5s;
+  transition: var(--time);
 }
 .footer-icon .main-icon.mail:hover {
   fill: var(--crimson);
   background-color: var(--white);
   border: 1px solid transparent;
-  transition: 0.5s;
+  transition: var(--time);
 }
 p.footer-text a {
   font-size: 12px;
