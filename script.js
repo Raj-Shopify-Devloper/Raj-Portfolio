@@ -1,7 +1,6 @@
 // Skill cahrt
 $(document).ready(function () {
   "use strict";
-
   function progressBarAndCountNumber() {
     const progressElements = document.querySelectorAll(".progress");
     const MAX = 90; // Set your maximum value here
@@ -97,60 +96,14 @@ $(document).ready(function () {
   typeTextFunc(
     typeElement,
     [
-      "Front end developer ",
-      "Creative-attractive, and mastery ",
-      "Shopify Expert ",
+      "Frontend & Shopify Developer ",
+      "Create Wordpress Design",
+      "Create A Creative And Attractive Design ",
+      "Shopify Expert And Problem Soving Skill ",
       "2 Year+ Experience ",
     ],
     150,
     1000,
     500
   );
-
-  function typeEffect(element, texts, typeSpeed, backSpeed, loop) {
-    let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typing() {
-      const currentText = texts[index];
-      if (isDeleting) {
-        element.textContent = currentText.substring(0, charIndex--);
-        if (charIndex < 0) {
-          isDeleting = false;
-          index = (index + 1) % texts.length;
-          if (!loop && index === 0) {
-            return;
-          }
-        }
-      } else {
-        element.textContent = currentText.substring(0, charIndex++);
-        if (charIndex === currentText.length) {
-          isDeleting = true;
-          setTimeout(typing, 1000);
-          return;
-        }
-      }
-      setTimeout(typing, isDeleting ? backSpeed : typeSpeed);
-    }
-
-    typing();
-  }
-
-  const typingElement1 = document.querySelector(".typing");
-  const typingElement2 = document.querySelector(".typing-3");
-
-  typeEffect(
-    typingElement1,
-    [
-      "Front end developer ",
-      "Shopify Expert ",
-      "Technician ",
-      "2 Year+ Experience ",
-    ],
-    150,
-    75,
-    true
-  );
-  typeEffect(typingElement2, ["Connect with me on :) "], 150, 75, true);
 });
