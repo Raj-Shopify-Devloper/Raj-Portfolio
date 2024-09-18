@@ -107,3 +107,8 @@ $(document).ready(function () {
     500
   );
 });
+
+nodeMarquee({
+  parent: ".node-marquee",
+  speed: 1,
+});
