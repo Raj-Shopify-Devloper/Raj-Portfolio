@@ -1,8 +1,12 @@
 :root {
   --white: #fff;
-  --crimson: crimson;
+  --crimson: #53363b;
   --black: black;
+  --logo-color: #00000073;
+  --sky: #d2bf9e;
+  --perpal: #304d46;
   --p-color: gray;
+  --bg-color: #d2bf9e;
   --primary-font: "Ubuntu", sans-serif;
   --secondary-font: "Abril Fatface", serif;
   --font-size-large: 53px;
@@ -13,7 +17,6 @@
   --padding-medium: 20px;
   --padding-large: 30px;
 }
-
 *,
 *:before,
 *:after {
@@ -27,7 +30,7 @@ img {
   height: auto;
 }
 .container {
-  max-width: 1760px;
+  max-width: 1430px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -40,7 +43,7 @@ h3 {
 }
 /* Header section Start */
 .header-logo span {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--logo-color);
   font-size: 53px;
   -webkit-text-stroke: 1px var(--black);
   font-family: var(--secondary-font);
@@ -83,13 +86,6 @@ ul.item-list li a {
   width: max-content;
   transition: 0.8s;
 }
-
-.header-section {
-  background: linear-gradient(-45deg, #ee7752, #23a6d5, #23d5ab);
-  position: relative;
-  height: 80vh;
-}
-
 .hamburger {
   position: relative;
   width: 70px;
@@ -203,7 +199,7 @@ ul.item-list {
   backdrop-filter: blur(50px);
   border-radius: 50%;
   border: 1px solid var(--white);
-  box-shadow: inset -6px -2px 12px 0px gray;
+  box-shadow: inset -6px -2px 12px 0px var(--p-color);
 }
 
 .my-image img:hover {
@@ -245,10 +241,15 @@ ul.item-list {
 
 /* Banner section start */
 section.header-section {
-  height: 750px;
+  background: linear-gradient(
+    -45deg,
+    var(--crimson),
+    var(--sky),
+    var(--perpal)
+  );
   position: relative;
+  height: 90vh;
 }
-
 .banner-air-background .air {
   position: absolute;
   bottom: 0;
@@ -260,25 +261,25 @@ section.header-section {
 }
 .banner-air-background .air.air1 {
   animation: wave 30s linear infinite;
-  z-index: 1000;
+  z-index: 10;
   opacity: 1;
   animation-delay: 0s;
 }
 .banner-air-background .air.air2 {
   animation: wave2 15s linear infinite;
-  z-index: 999;
+  z-index: 9;
   opacity: 0.5;
   animation-delay: -5s;
 }
 .banner-air-background .air.air3 {
   animation: wave 30s linear infinite;
-  z-index: 998;
+  z-index: 8;
   opacity: 0.2;
   animation-delay: -2s;
 }
 .banner-air-background .air.air4 {
   animation: wave2 5s linear infinite;
-  z-index: 997;
+  z-index: 7;
   opacity: 0.7;
   animation-delay: -5s;
 }
@@ -298,7 +299,6 @@ section.header-section {
     background-position-x: -2000px;
   }
 }
-
 .banner-text p {
   color: #75f500;
   font-size: var(--padding-large);
@@ -326,26 +326,38 @@ section.header-section {
   text-align: center;
 }
 .text-container p {
-  color: var(--black);
+  color: var(--white);
   font-size: 28px;
   font-weight: bold;
 }
-.text-container span {
-  -webkit-text-stroke: 1px var(--black);
-  font-family: "Abril Fatface";
-}
 .text-container h2 {
-  margin: 0;
+  margin: 40px 0 0;
   font-size: 60px;
-  color: rgba(225, 225, 225, 0.01);
+  color: var(--white);
   background-repeat: repeat;
   text-align: center;
-  -webkit-text-stroke: 2px var(--white);
+  -webkit-text-stroke: 0.5px var(--black);
   text-transform: uppercase;
   font-weight: 900;
   font-family: "Abril Fatface";
   letter-spacing: 5px;
   height: 200px;
+}
+.text-container span {
+  -webkit-text-stroke: 0.2px var(--white);
+  font-family: "Abril Fatface";
+  position: relative;
+}
+.text-container span.typing:after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 5px;
+  background: var(--white);
+  height: 90%;
+  width: 5px;
+  animation: blink 0.7s steps(1) infinite;
+  display: block;
 }
 @keyframes iconmove {
   0% {
@@ -360,6 +372,7 @@ section.header-section {
 }
 .icon-banner {
   position: relative;
+  z-index: 11;
 }
 .banner-icon {
   display: flex;
@@ -503,13 +516,13 @@ a.about-cv {
 }
 /* Services-section start */
 .services {
-  background-color: teal;
+  background-color: var(--logo-color);
   padding-block: 100px;
 }
 .services-head::after,
 .services-head.title::after {
   content: "what i provide";
-  background-color: teal;
+  background-color: var(--white);
 }
 .services-head::before,
 .services-head.title::before {
@@ -574,15 +587,15 @@ h2.services-head {
 }
 .services-contain .services-box:nth-child(1)::before,
 .services-contain .services-box:nth-child(1)::after {
-  background: linear-gradient(-45deg, #ee7752, #23a6d5, #23d5ab);
+  background: var(--perpal);
 }
 .services-contain .services-box:nth-child(2)::before,
 .services-contain .services-box:nth-child(2)::after {
-  background: linear-gradient(315deg, rgb(77, 255, 3), rgb(0, 208, 255));
+  background: var(--sky);
 }
 .services-contain .services-box:nth-child(3)::before,
 .services-contain .services-box:nth-child(3)::after {
-  background: linear-gradient(315deg, rgb(54, 209, 220), rgb(91, 134, 229));
+  background: var(--crimson);
 }
 .services-contain .services-box span {
   display: block;
@@ -718,78 +731,7 @@ a.Skill-btn {
   padding: var(--padding-medium) 50px var(--padding-medium);
 }
 /* my project section start  */
-.teams .carousel {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-}
-.project-box img {
-  width: 300px;
-  height: 300px;
-  -webkit-mask-image: radial-gradient(
-    50% 50% at 50% 50%,
-    #001d2d 56.46%,
-    rgba(0, 29, 45, 0) 100%
-  );
-}
-#Projects .carousel.slick-initialized.slick-slider {
-  overflow: hidden;
-}
-section#Projects {
-  background: teal;
-  padding-block: 100px;
-}
-.project-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-h2.project-head.title {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  font-weight: 500;
-  margin-bottom: 60px;
-  padding-bottom: var(--padding-medium);
-  color: var(--white);
-  font-family: Ubuntu, sans-serif;
-}
-.project-head::after,
-.project-head.title::after {
-  content: "What i   do";
-  background-color: teal;
-}
-.project-head::before,
-.project-head.title::before {
-  background-color: var(--white);
-}
-a.project.btn {
-  padding: 15px 50px 15px 50px;
-}
-.project-box p {
-  padding-block: 34px;
-  color: var(--white);
-  font-size: var(--padding-medium);
-}
-.project-card {
-  transition: 0.9s;
-}
-.project-card.slick-slide.slick-current.slick-active.slick-center {
-  scale: 0.9;
-  transition: 0.9s;
-}
-.card.slick-slide.slick-current.slick-active.slick-center {
-  scale: 0.9;
-  transition: 2s;
-}
-.project-text {
-  color: var(--white);
-  font-size: 25px;
-  padding-top: var(--padding-medium);
-  font-family: Ubuntu, sans-serif;
-}
+
 /* Contact section satrt  */
 section#contact {
   padding-block: 100px;
@@ -809,7 +751,7 @@ h2.contact-head.title {
 .contact-content {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  gap: 60px;
   align-items: center;
 }
 .column.left {
@@ -848,7 +790,7 @@ h2.contact-head.title {
   transition: 0.8s;
 }
 a.contact-sub-title:hover {
-  color: teal;
+  color: var(--logo-color);
   transition: 0.8s;
 }
 .contact-text {
@@ -858,34 +800,13 @@ a.contact-sub-title:hover {
   display: flex;
   gap: 32px;
   padding-block: 15px 0;
+  width: 100%;
 }
-.contact-field.name > input {
-  height: 100%;
-  width: 350px;
-  font-size: 17px;
-  font-family: Poppins, sans-serif;
-  border-width: 1px;
-  border-style: solid;
-  border-color: lightgrey;
-  border-image: initial;
-  border-radius: 6px;
-  outline: none;
-  padding: 12px 15px;
-  transition: all 0.3s ease 0s;
+.contact-field.name {
+  width: calc(50% - 16px);
 }
-.contact-field.email > input {
-  height: 100%;
-  width: 350px;
-  font-size: 17px;
-  font-family: Poppins, sans-serif;
-  border-width: 1px;
-  border-style: solid;
-  border-color: lightgrey;
-  border-image: initial;
-  border-radius: 6px;
-  outline: none;
-  padding: 12px 15px;
-  transition: all 0.3s ease 0s;
+.contact-field.email {
+  width: calc(50% - 16px);
 }
 .contact-field > input {
   height: 100%;
@@ -919,7 +840,7 @@ a.contact-sub-title:hover {
   transition: all 0.3s ease 0s;
 }
 .contact-row > svg {
-  fill: teal;
+  fill: var(--logo-color);
   height: var(--padding-large);
   width: var(--padding-large);
 }
@@ -940,8 +861,8 @@ h2.footer-head {
   color: var(--white);
 }
 footer.footer-section {
-  background: teal;
-  padding-block: 100px;
+  background: var(--logo-color);
+  padding-block: 100px 0;
 }
 .fa-brands,
 .fab {
@@ -950,7 +871,7 @@ footer.footer-section {
 }
 .footer-icon {
   list-style: none;
-  padding: 36px 0;
+  padding: 36px 0 80px;
   display: flex;
   justify-content: center;
   gap: 35px;
@@ -966,7 +887,7 @@ p.footer-text > a {
   padding: 0 6px 0 6px;
 }
 .footer-icon a {
-  border: 1px solid;
+  border: 1px solid var(--black);
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -1048,4 +969,8 @@ p.footer-text > a {
   background-color: var(--white);
   border: 1px solid transparent;
   transition: 0.5s;
+}
+p.footer-text a {
+  font-size: 12px;
+  padding-bottom: 20px;
 }
