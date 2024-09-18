@@ -58,12 +58,6 @@ h3 {
   letter-spacing: 2px;
 }
 
-.main {
-  position: fixed;
-  right: 0;
-  z-index: 1001;
-}
-
 .header-logo a {
   color: var(--white);
   font-size: 38px;
@@ -75,18 +69,100 @@ h3 {
 .header-text-logo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 13px 0;
 }
 
 ul.item-list li a {
-  color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size-small);
+  font-family: var(--primary-font);
   text-decoration: none;
   display: flex;
   max-width: 100%;
   width: max-content;
   transition: 0.8s;
 }
-.hamburger {
+
+ul.item-list li a:hover {
+  color: var(--crimson);
+  transition: 0.8s;
+}
+
+.menu-button-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.item-list div {
+  padding: var(--padding-small) var(--padding-large);
+  cursor: pointer;
+}
+
+.menu-button {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+ul.item-list {
+  display: flex;
+  gap: 60px;
+  padding: 0;
+}
+ul.item-list li {
+  list-style: none;
+}
+.my-image img {
+  width: 350px;
+  height: 350px;
+  backdrop-filter: blur(50px);
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  box-shadow: inset -6px -2px 12px 0px var(--p-color);
+}
+
+.my-image img:hover {
+  cursor: pointer;
+}
+
+.icon-wrapper {
+  background: var(--black);
+  border-radius: var(--font-size-medium);
+}
+
+/* .menu-button:checked ~ .item-list {
+  transform: translateX(-20%) scale(1);
+  border-radius: var(--padding-medium);
+  opacity: 1;
+  right: 15%;
+  user-select: auto;
+  margin: 0;
+  max-width: 100vh;
+  width: max-content;
+  z-index: -1;
+} */
+
+/* .menu-button:checked ~ .icon-wrapper .hamburger-line.second {
+  transform: rotate(-45deg);
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger-line.first {
+  transform: translate(2px, 8px) rotate(-135deg);
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger-line.third {
+  transform: translate(11px, -3px) rotate(-135deg);
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger:before {
+  transform: rotate(45deg);
+  .hamburger {
   position: relative;
   width: 70px;
   height: 70px;
@@ -139,105 +215,7 @@ ul.item-list li a {
   transform-origin: left;
 }
 
-ul.item-list li a:hover {
-  color: mediumspringgreen;
-  transition: 0.8s;
-}
-
-.menu-button-wrapper {
-  position: relative;
-  display: inline-block;
-  padding: 0 15px;
-}
-
-.item-list {
-  position: absolute;
-  top: 40px;
-  transform: translateX(-10%) scale(0);
-  transform-origin: center;
-  transition: all 0.4s cubic-bezier(0.54, -0.1, 0.57, 0.57);
-  color: var(--white);
-  width: auto;
-  right: 15%;
-  text-align: left;
-  border-radius: var(--font-size-medium);
-  font-weight: 300;
-  opacity: 0;
-  user-select: none;
-  list-style: none;
-  font-size: 41px;
-  backdrop-filter: blur(9px);
-  padding: var(--padding-large);
-  z-index: 1;
-  background: #74bfdd42;
-}
-
-.item-list div {
-  padding: var(--padding-small) var(--padding-large);
-  cursor: pointer;
-}
-
-.menu-button {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-  cursor: pointer;
-}
-
-ul.item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-.my-image img {
-  width: 350px;
-  height: 350px;
-  backdrop-filter: blur(50px);
-  border-radius: 50%;
-  border: 1px solid var(--white);
-  box-shadow: inset -6px -2px 12px 0px var(--p-color);
-}
-
-.my-image img:hover {
-  cursor: pointer;
-}
-
-.icon-wrapper {
-  background: var(--black);
-  border-radius: var(--font-size-medium);
-}
-
-.menu-button:checked ~ .item-list {
-  transform: translateX(-20%) scale(1);
-  border-radius: var(--padding-medium);
-  opacity: 1;
-  right: 15%;
-  user-select: auto;
-  margin: 0;
-  max-width: 100vh;
-  width: max-content;
-  z-index: -1;
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger-line.second {
-  transform: rotate(-45deg);
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger-line.first {
-  transform: translate(2px, 8px) rotate(-135deg);
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger-line.third {
-  transform: translate(11px, -3px) rotate(-135deg);
-}
-
-.menu-button:checked ~ .icon-wrapper .hamburger:before {
-  transform: rotate(45deg);
-}
+} */
 
 /* Banner section start */
 section.header-section {
