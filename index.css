@@ -4,7 +4,7 @@
   --logo-color: #39312db3;
   --perpal: #d2dad5;
   --crimson: #5d031d;
-  --sky: #124e66;
+  --sky: #82663a;
   --p-color: gray;
   --bg-color: #d2bf9e;
   --primary-font: "Ubuntu", sans-serif;
@@ -413,7 +413,11 @@ a.about-cv {
 }
 /* Services-section start */
 .services {
-  background-color: var(--logo-color);
+  background: url(image/bg\ image.png);
+  background-size: auto;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   padding-block: 100px;
 }
 .services-head::after,
@@ -483,6 +487,7 @@ h2.services-head {
   border-radius: 8px;
   transition: all var(--time) ease 0s;
   left: 0;
+  opacity: 0.6;
 }
 .services-contain .services-box:hover::before,
 .services-contain .services-box:hover::after {
@@ -494,17 +499,14 @@ h2.services-head {
 .services-contain .services-box:nth-child(1)::before,
 .services-contain .services-box:nth-child(1)::after {
   background: var(--sky);
-  opacity: 0.2;
 }
 .services-contain .services-box:nth-child(2)::before,
 .services-contain .services-box:nth-child(2)::after {
   background: var(--perpal);
-  opacity: 0.2;
 }
 .services-contain .services-box:nth-child(3)::before,
 .services-contain .services-box:nth-child(3)::after {
   background: var(--crimson);
-  opacity: 0.2;
 }
 .services-box {
   position: relative;
@@ -748,8 +750,12 @@ h2.footer-head {
   color: var(--white);
 }
 footer.footer-section {
-  background: var(--logo-color);
+  background: url(image/bg\ image.png);
   padding-block: 100px 0;
+  background-size: auto;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .fa-brands,
 .fab {
